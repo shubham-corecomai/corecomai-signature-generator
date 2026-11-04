@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoreCom AI Signature Generator</title>
+  <meta name="description" content="Create your animated CoreCom AI email signature as a GIF in seconds. Everything runs in your browser.">
+  <link rel="icon" href="assets/mark.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap brand">
+      <img src="assets/mark.png" alt="" width="44">
+      <div>
+        <h1>Email Signature Generator</h1>
+        <p>CoreCom AI &middot; fill in your details, get an animated GIF</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <section class="card" aria-labelledby="form-h">
+      <h2 id="form-h">1. Your details</h2>
+      <form id="form" novalidate autocomplete="off">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" maxlength="30" placeholder="Your Name" required>
+        </div>
+        <div class="field">
+          <label for="role">Job title</label>
+          <input id="role" name="role" type="text" maxlength="40" placeholder="Your Job Title" required>
+        </div>
+
+        <fieldset>
+          <legend>Contact lines <span class="muted">(up to 3 &mdash; leave any blank)</span></legend>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" maxlength="40" placeholder="first.last@corecomai.com">
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" maxlength="24" placeholder="+91 98765 43210">
+          </div>
+          <div class="field">
+            <label for="phone2">Second phone</label>
+            <input id="phone2" name="phone2" type="tel" maxlength="24" placeholder="+971 50 123 4567">
+          </div>
+          <div class="field">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" maxlength="40" value="corecomai.com">
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" id="create" class="btn">Create my GIF</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="prev-h">
+      <h2 id="prev-h">2. Preview</h2>
+      <div class="preview">
+        <canvas id="live" width="680" height="200" aria-label="Preview of the finished signature"></canvas>
+      </div>
+      <p class="muted small">This is the finished signature. Press <strong>Create my GIF</strong> to build the animated version.</p>
+
+      <div id="result" class="result" hidden tabindex="-1">
+        <h3>Your animated signature</h3>
+        <div class="preview"><img id="gif" alt="Your animated email signature" width="340" height="100"></div>
+        <div class="actions">
+          <a id="dl1" class="btn" download>Download GIF (use this one in Gmail)</a>
+          <a id="dl2" class="btn ghost" download>Sharper 2x copy</a>
+        </div>
+        <p class="muted small">The 2x copy is only for hosting online. For Gmail, upload the first file.</p>
+      </div>
+    </section>
+
+    <section class="card wide" aria-labelledby="how-h">
+      <h2 id="how-h">3. Add it to Gmail</h2>
+      <ol class="steps">
+        <li>In Gmail, click the <strong>gear icon</strong> &rarr; <strong>See all settings</strong> &rarr; <strong>General</strong> tab &rarr; scroll to <strong>Signature</strong> &rarr; <strong>Create new</strong>.</li>
+        <li>Click inside the signature box, click the <strong>picture icon</strong> in the toolbar, choose <strong>Upload</strong>, and pick the GIF you downloaded.</li>
+        <li>Click the picture once and choose <strong>Original size</strong>.</li>
+        <li>Optional: with the picture still selected, click the <strong>link icon</strong> and paste your website address so people can click the signature.</li>
+        <li>Under <em>Signature defaults</em> pick this signature for new emails and replies, then click <strong>Save Changes</strong> at the bottom of the page.</li>
+        <li>Send yourself a test email to see the animation. It may look still while you are writing the email.</li>
+      </ol>
+      <p class="muted small">Outlook: File &rarr; Options &rarr; Mail &rarr; Signatures &rarr; New, then Insert picture. Some email apps (reports say classic Outlook for Windows) show only the first frame, which is the finished signature. The phone numbers and website are part of the picture, so people can&rsquo;t tap or copy them.</p>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Everything runs in your browser &mdash; the details you type are never uploaded or stored.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
